@@ -1,7 +1,11 @@
 import '../styles/global.css';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function App () {
+
+  const [menuShow, setMenuShow] = useState(true);
+
   return (
     <div className='bg-dark'>
       <div className='absolute lg:hidden'>
@@ -38,22 +42,59 @@ export default function App () {
             className="rounded-full"
           />
         </div>
-        <div className='flex flex-col text-center items-center lg:justify-center lg:order-1 lg:pr-16'>
+        <div className='flex flex-col text-center items-center mb-10 lg:justify-center lg:order-1 lg:pr-16'>
           <h3 className='text-green my-2'>Hello I'm</h3>
           <h1 className='text-white mt-2'>Jesús Rodrigo</h1>
           <h2 className='text-white mb-2 mt-1 lg:m-0'>Desarrollador web full stack</h2>
           <p className='text-white my-2 md:w-4/5 lg:w-2/4'>Freelance, developer, student and self-taught passionate about web development and design.</p>
           <button className='bg-green text-dark w-max py-1 px-4 rounded-lg my-2 hover:bg-dark hover:text-green border-2 hover:border-green'>Download CV</button>
-          <div className='absolute hidden lg:block'>
-            <Image
-              src="/SVG/miscelanea-2-desktop.svg"
-              alt='miscelanea'
-              width={163}
-              height={163}
-            />
-          </div>
         </div>
       </div>
+      {/* MENU MOBILE */}
+      <div className='h-16 w-full flex items-center justify-between px-5 fixed bottom-0 left-0 z-10'>
+        <Image
+          src="/SVG/logo.svg"
+          alt='logo JR'
+          width={49}
+          height={49}
+        />
+        {
+          menuShow ? 
+          (
+            <Image
+              onClick={() => setMenuShow(false)}
+              src="/SVG/close.svg"
+              alt='icon hamburguer'
+              width={22}
+              height={22}
+            />
+          ): (
+            <Image
+              onClick={() => setMenuShow(true)}
+              src="/SVG/hamburguer.svg"
+              alt='icon hamburguer'
+              width={25}
+              height={19}
+            />
+          )
+        }
+        
+      </div>
+      {
+        menuShow ? 
+        (
+          <div className='w-full h-screen flex items-center justify-center absolute top-0 bg-dark'>
+            <ul className='text-center text-white font-black pb-10'>
+              <li className='my-6'><h3>Home</h3></li>
+              <li className='my-6'><h3>Briefcase</h3></li>
+              <li className='my-6'><h3>Service</h3></li>
+              <li className='my-6'><h3>Trayectory</h3></li>
+              <li className='my-6'><h3>Skills</h3></li>
+              <li className='my-6'><h3>Contact</h3></li>
+            </ul>
+          </div>
+        ): null
+      }
     </div>
   )
 }
