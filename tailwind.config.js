@@ -4,7 +4,11 @@ module.exports = {
         './components/**/*.{js,jsx}'
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: {
+                'work': "url('/images/work.png')"
+            }
+        },
         colors: {
             'green': '#05EBB4',
             'green-dark': '#05DEAA',

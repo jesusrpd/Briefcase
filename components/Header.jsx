@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Header () {
   return (
-    <div className='bg-dark'>
+    <div>
       <div className='absolute lg:hidden'>
         <Image
           src="/SVG/miscelanea-1-mobile.svg"

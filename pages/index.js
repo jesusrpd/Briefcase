@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Briefcase from '../components/Briefcase';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 
@@ -6,13 +7,14 @@ export default function Home () {
   const [menuShow, setMenuShow] = useState(false);
 
   return (
-    <>
+    <div className='bg-dark'>
       <Header/>
+      <Briefcase/>
       <Menu menuShow={menuShow} setMenuShow={() => setMenuShow(!menuShow)}/>
       {
         menuShow ? 
         (
-          <div className='w-full h-screen flex items-center justify-center absolute top-0 bg-dark'>
+          <div className='w-full h-screen flex items-center justify-center absolute top-0 bg-dark z-20'>
             <ul className='text-center text-white font-black pb-10'>
               <li className='my-6'><h3>Home</h3></li>
               <li className='my-6'><h3>Briefcase</h3></li>
@@ -24,6 +26,6 @@ export default function Home () {
           </div>
         ): null
       }
-    </>
+    </div>
   )
 }
