@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Briefcase from '../components/Briefcase';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
+import Service from '../components/Servicios';
 
 export default function Home () {
   const [menuShow, setMenuShow] = useState(false);
@@ -10,6 +11,7 @@ export default function Home () {
     <div className='bg-dark'>
       <Header/>
       <Briefcase/>
+      <Service/>
       <Menu menuShow={menuShow} setMenuShow={() => setMenuShow(!menuShow)}/>
       {
         menuShow ? 

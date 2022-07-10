@@ -6,7 +6,7 @@ export default function Work () {
   const [info, setInfo] = useState(false);
 
   return(
-    <div className="bg-work bg-no-repeat w-72 h-72 text-center m-auto relative rounded my-4">
+    <div className="bg-work bg-no-repeat bg-cover w-72 h-72 text-center m-auto relative rounded my-4 md:w-80 md:h-80">
           <h2 className="text-white text-5xl font-bold absolute top-10 left-10">Title</h2>
           <div className="pointer absolute bottom-8 left-28" onClick={() => setInfo(!info)}>
             <Image
