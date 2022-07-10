@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 export default function Menu ({menuShow, setMenuShow}) {
   return (
-    <div className='h-16 w-full flex items-center justify-between px-5 fixed bottom-0 left-0 z-10'>
+    <div className='h-12 w-screen flex items-center justify-between px-5 fixed bottom-0 left-0 z-20 bg-dark'>
         <Image
           src="/SVG/logo.svg"
           alt='logo JR'
-          width={49}
-          height={49}
+          width={40}
+          height={40}
         />
         {
           menuShow ? 
