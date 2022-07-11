@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Briefcase from '../components/Briefcase';
+import Contactme from '../components/Contactme';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Service from '../components/Servicios';
@@ -16,6 +17,7 @@ export default function Home () {
       <Service/>
       <Trajectory/>
       <Skills/>
+      <Contactme/>
       <Menu menuShow={menuShow} setMenuShow={() => setMenuShow(!menuShow)}/>
       {
         menuShow ? 
