@@ -3,6 +3,7 @@ import Briefcase from '../components/Briefcase';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Service from '../components/Servicios';
+import Skills from '../components/Skills';
 import Trajectory from '../components/Trajectory';
 
 export default function Home () {
@@ -14,6 +15,7 @@ export default function Home () {
       <Briefcase/>
       <Service/>
       <Trajectory/>
+      <Skills/>
       <Menu menuShow={menuShow} setMenuShow={() => setMenuShow(!menuShow)}/>
       {
         menuShow ? 
