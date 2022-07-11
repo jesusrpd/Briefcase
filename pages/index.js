@@ -3,6 +3,7 @@ import Briefcase from '../components/Briefcase';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Service from '../components/Servicios';
+import Trajectory from '../components/Trajectory';
 
 export default function Home () {
   const [menuShow, setMenuShow] = useState(false);
@@ -12,6 +13,7 @@ export default function Home () {
       <Header/>
       <Briefcase/>
       <Service/>
+      <Trajectory/>
       <Menu menuShow={menuShow} setMenuShow={() => setMenuShow(!menuShow)}/>
       {
         menuShow ? 
