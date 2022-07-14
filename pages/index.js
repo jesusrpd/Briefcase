@@ -24,7 +24,7 @@ export default function Home () {
       {
         menuShow ? 
         (
-          <div className='w-full h-screen flex items-center justify-center fixed top-0 bg-dark z-10'>
+          <div className={`w-full h-screen flex items-center justify-center menu-content fixed bg-dark z-10 ${menuShow ? 'top-0': 'top-full'}`}>
             <ul className='text-center text-white font-black pb-10'>
               <li className='my-6'><h3>Home</h3></li>
               <li className='my-6'><h3>Briefcase</h3></li>

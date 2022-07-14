@@ -35,6 +35,10 @@ button{
     font-weight: bolder;
 }
 
+input::selection{
+
+}
+
 input:focus, textarea:focus{
     outline: none;
 }
@@ -76,4 +80,47 @@ input:focus, textarea:focus{
     h1{
         font-size: 48px;
     }
+}
+
+/* BTN NAV MOBILE AND TABLET */
+.lbl-menu{
+    width: 40px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+	transform: scale(1.2);
+}
+.lbl-menu #spn1,#spn2,#spn3{
+    position: absolute;
+    content: '';
+    background:#ffff;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    transition: all 400ms ease;
+}
+#spn2{
+    top: 12px;
+}
+#spn3{
+    top: 23px;
+}
+#btn-menu{
+    display: none;
+}
+#btn-menu:checked ~ .lbl-menu #spn1{
+    transform: rotate(140deg);
+    top: 10px;
+}
+#btn-menu:checked ~ .lbl-menu #spn2{
+    opacity: 0;
+}
+#btn-menu:checked ~ .lbl-menu #spn3{
+    transform: rotate(-140deg);
+    top: 10px;
+}
+
+.menu-content{
+    animation: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }

@@ -9,26 +9,12 @@ export default function Menu ({menuShow, setMenuShow}) {
           width={40}
           height={40}
         />
-        {
-          menuShow ? 
-          (
-            <Image
-              onClick={setMenuShow}
-              src="/SVG/close.svg"
-              alt='icon hamburguer'
-              width={22}
-              height={22}
-            />
-          ): (
-            <Image
-              onClick={setMenuShow}
-              src="/SVG/hamburguer.svg"
-              alt='icon hamburguer'
-              width={25}
-              height={19}
-            />
-          )
-        }
+        <input type="checkbox" id="btn-menu" onClick={() => setMenuShow(!menuShow)}/>
+        <label htmlFor="btn-menu" className="lbl-menu">
+          <span id="spn1"></span>
+          <span id="spn2"></span>
+          <span id="spn3"></span>
+        </label>
       </div>
   )
 }

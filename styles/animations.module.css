@@ -1,0 +1,8 @@
+.aparecer{
+  animation: .3s ease-in-out forwards;
+}
+
+@keyframes aparecer {
+  0% {transform: translateY(20deg);}
+  100%{transform: translateY(0);}
+}
