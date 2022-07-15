@@ -1,8 +1,10 @@
-.aparecer{
+.slide_right{
   animation: .3s ease-in-out forwards;
+  animation-name: slide-right;
+  transition: all .3s ease-in-out;
 }
 
-@keyframes aparecer {
-  0% {transform: translateY(20deg);}
-  100%{transform: translateY(0);}
+@keyframes slide-right {
+  0% {margin-left: 100%;}
+  100%{margin-left: 40%;}
 }

@@ -7,6 +7,7 @@ import Menu from '../components/Menu';
 import Service from '../components/Servicios';
 import Skills from '../components/Skills';
 import Trajectory from '../components/Trajectory';
+import animation from '../styles/animations.module.css';
 
 export default function Home () {
   const [menuShow, setMenuShow] = useState(false);
@@ -24,7 +25,7 @@ export default function Home () {
       {
         menuShow ? 
         (
-          <div className={`w-full h-screen flex items-center justify-center menu-content fixed bg-dark z-10 ${menuShow ? 'top-0': 'top-full'}`}>
+          <div className={`w-full h-screen flex items-center justify-start menu-content fixed bg-dark z-10 top-0 pl-11 ${menuShow ? `${animation.slide_right}`: `${animation.slide_left}`}`}>
             <ul className='text-center text-white font-black pb-10'>
               <li className='my-6'><h3>Home</h3></li>
               <li className='my-6'><h3>Briefcase</h3></li>
