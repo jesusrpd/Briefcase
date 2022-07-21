@@ -1,16 +1,31 @@
-import { useState } from 'react';
 import Briefcase from '../components/Briefcase';
 import Contactme from '../components/Contactme';
 import FormContact from '../components/FormContact';
 import Header from '../components/Header';
-import Menu from '../components/Menu';
 import Service from '../components/Servicios';
 import Skills from '../components/Skills';
 import Trajectory from '../components/Trajectory';
-import animation from '../styles/animations.module.css';
+import { useEffect } from 'react';
+import Nav from '../components/Nav';
 
 export default function Home () {
-  const [menuShow, setMenuShow] = useState(false);
+
+  useEffect(() => {
+    const toggleButton = document.getElementById('button-menu')
+    const navWrapper = document.getElementById('nav')
+
+    toggleButton.addEventListener('click', () => {
+      toggleButton.classList.toggle('close')
+      navWrapper.classList.toggle('show')
+    })
+
+    navWrapper.addEventListener('click', e => {
+      if (e.target.id === "nav") {
+        navWrapper.classList.remove("show")
+        navWrapper.classList.remove("close")
+      }
+    })
+  },[])
 
   return (
     <div className='bg-dark'>
@@ -21,22 +36,7 @@ export default function Home () {
       <Skills/>
       <Contactme/>
       <FormContact/>
-      <Menu menuShow={menuShow} setMenuShow={() => setMenuShow(!menuShow)}/>
-      {
-        menuShow ? 
-        (
-          <div className={`w-full h-screen flex items-center justify-start menu-content fixed bg-dark z-10 top-0 pl-11 ${menuShow ? `${animation.slide_right}`: `${animation.slide_left}`}`}>
-            <ul className='text-center text-white font-black pb-10'>
-              <li className='my-6'><h3>Home</h3></li>
-              <li className='my-6'><h3>Briefcase</h3></li>
-              <li className='my-6'><h3>Service</h3></li>
-              <li className='my-6'><h3>Trayectory</h3></li>
-              <li className='my-6'><h3>Skills</h3></li>
-              <li className='my-6'><h3>Contact</h3></li>
-            </ul>
-          </div>
-        ): null
-      }
+      <Nav/>
     </div>
   )
 }
